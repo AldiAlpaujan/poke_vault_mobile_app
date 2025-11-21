@@ -1,0 +1,1 @@
+This folder for configuration of project or thrid party ex: routes, theme, firebase

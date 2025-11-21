@@ -1,0 +1,1 @@
+This folder is for implementation abstract class from domain

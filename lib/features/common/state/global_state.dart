@@ -1,0 +1,1 @@
+// This is a global state that can be used to store any data that needs to be accessible across the entire app.
