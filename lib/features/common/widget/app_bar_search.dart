@@ -1,8 +1,8 @@
 import 'package:flutter_project_template/features/common/widget/app_svg_icon.dart';
-import 'package:flutter_project_template/shared/constants/assets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_project_template/config/theme/theme.dart';
 import 'package:flutter_project_template/features/common/widget/app_back_button.dart';
+import 'package:flutter_project_template/shared/constants/gen/assets.gen.dart';
 import 'package:flutter_project_template/shared/utils/function.dart';
 import 'package:get/get.dart';
 
@@ -114,7 +114,7 @@ class _AppBarSearchState extends State<AppBarSearch> {
                             package: Icons.close.fontPackage,
                           ),
                         )
-                      : AppSvgIcon(svg: Assets.svg.magnify, size: 18),
+                      : AppSvgIcon(svg: Assets.svg.searchNormal, size: 18),
                 ),
               ...widget.actions ?? [],
             ],

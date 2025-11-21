@@ -1,7 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_project_template/shared/constants/assets.dart';
+import 'package:flutter_project_template/shared/constants/gen/assets.gen.dart';
 import 'package:flutter_project_template/shared/enums/e_image_type.dart';
 
 class AppImage extends StatelessWidget {
@@ -70,7 +70,7 @@ class AppImage extends StatelessWidget {
 
   Widget errorImg() {
     return Image.asset(
-      alt ?? Assets.image.errorImg,
+      alt ?? Assets.image.imgError.path,
       width: width,
       height: height,
       fit: fit,
