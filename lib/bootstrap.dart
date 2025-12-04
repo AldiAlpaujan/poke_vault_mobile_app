@@ -3,15 +3,20 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_project_template/app/bindings/app_bindings.dart';
 import 'package:flutter_project_template/app/routes/pages.dart';
+import 'package:flutter_project_template/config/app_config.dart';
 import 'package:flutter_project_template/config/network/isrg_patch.dart';
 import 'package:flutter_project_template/config/theme/theme.dart';
+import 'package:flutter_project_template/features/common/widget/app_banner.dart';
+import 'package:flutter_project_template/shared/enums/app_flavor.dart';
 import 'package:flutter_project_template/shared/services/notification_service.dart';
-import 'package:get/get_navigation/src/root/get_material_app.dart';
+import 'package:get/get_instance/src/extension_instance.dart';
+import 'package:get/route_manager.dart';
 import 'package:in_app_update/in_app_update.dart';
 
-void main() {
+void bootstrap() {
   applyIsrgPatch();
   WidgetsFlutterBinding.ensureInitialized();
+  AppBindings().dependencies();
   runApp(const MyApp());
 }
 
@@ -51,14 +56,14 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
-      title: "Application",
+    final appConifg = Get.find<AppConfig>();
+    final application = GetMaterialApp(
+      title: appConifg.appName,
       getPages: AppPages.pages,
       initialRoute: AppPages.initial,
       debugShowCheckedModeBanner: false,
       localizationsDelegates: AppTheme.localizationsDelegates,
       supportedLocales: AppTheme.supportedLocales,
-      initialBinding: AppBindings(),
       theme: ThemeData(
         useMaterial3: false,
         primarySwatch: AppTheme.primarySwatch,
@@ -71,5 +76,10 @@ class _MyAppState extends State<MyApp> {
         appBarTheme: AppTheme.appBarTheme,
       ),
     );
+
+    return switch (appConifg.flavor) {
+      AppFlavor.development => AppBanner(message: 'DEV', child: application),
+      AppFlavor.production => application,
+    };
   }
 }

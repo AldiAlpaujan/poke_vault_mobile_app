@@ -5,7 +5,7 @@
       "name": "development",
       "type": "dart",
       "request": "launch",
-      // "program": "D:\\Flutter Project\\mobile-vitri\\lib\\main\\main.dart",
+      "program": "lib/main/main_development.dart",
       "args": [
         "--flavor",
         "development"
@@ -15,7 +15,7 @@
       "name": "production",
       "type": "dart",
       "request": "launch",
-      // "program": "D:\\Flutter Project\\mobile-vitri\\lib\\main\\main.dart",
+      "program": "lib/main/main_production.dart",
       "args": [
         "--flavor",
         "production"
