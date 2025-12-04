@@ -7,7 +7,7 @@ void main() {
   Get.put(
     AppConfig(
       flavor: AppFlavor.development,
-      appName: "Project Template",
+      appName: "Project Template Dev",
       apiUrl: "https://aldimalpaujanbackend-production.up.railway.app/api",
     ),
   );
