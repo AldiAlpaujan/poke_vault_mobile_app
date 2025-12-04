@@ -1,0 +1,25 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "development",
+      "type": "dart",
+      "request": "launch",
+      // "program": "D:\\Flutter Project\\mobile-vitri\\lib\\main\\main.dart",
+      "args": [
+        "--flavor",
+        "development"
+      ]
+    },
+    {
+      "name": "production",
+      "type": "dart",
+      "request": "launch",
+      // "program": "D:\\Flutter Project\\mobile-vitri\\lib\\main\\main.dart",
+      "args": [
+        "--flavor",
+        "production"
+      ]
+    },
+  ]
+}
