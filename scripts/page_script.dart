@@ -16,9 +16,7 @@ Future<void> createPage(
     return;
   }
 
-  final pageFile = File(
-    '$featurePath/presentation/pages/$pageName.page.dart',
-  );
+  final pageFile = File('$featurePath/presentation/pages/$pageName.page.dart');
   final controllerFile = File(
     '$featurePath/presentation/controllers/$pageName.controller.dart',
   );
@@ -40,9 +38,10 @@ Future<void> createPage(
   late String pageContent, controllerContent;
 
   if (!isPagging) {
-    pageContent = '''
+    pageContent =
+        '''
 import 'package:flutter/material.dart';
-import 'package:albahjah_pustaka_mobile/features/$featurePage/presentation/controllers/$pageName.controller.dart';
+import 'package:poke_vault_mobile_app/features/$featurePage/presentation/controllers/$pageName.controller.dart';
 import 'package:get/get.dart';
 
 class ${pageName.toPascalCase()}Page extends GetView<${pageName.toPascalCase()}Controller> {
@@ -64,17 +63,19 @@ class ${pageName.toPascalCase()}Page extends GetView<${pageName.toPascalCase()}C
 }
 ''';
 
-    controllerContent = '''
-import 'package:albahjah_pustaka_mobile/shared/utils/handler_api_mixin.dart';
+    controllerContent =
+        '''
+import 'package:poke_vault_mobile_app/shared/utils/handler_api_mixin.dart';
 import 'package:get/get.dart';
 
 class ${pageName.toPascalCase()}Controller extends GetxController with HandlerApiMixin {}
 ''';
   } else {
-    pageContent = '''
+    pageContent =
+        '''
 import 'package:flutter/material.dart';
-import 'package:albahjah_pustaka_mobile/features/common/presentation/views/app_data_list_view.dart';
-import 'package:albahjah_pustaka_mobile/features/$featurePage/presentation/controllers/$pageName.controller.dart';
+import 'package:poke_vault_mobile_app/features/common/presentation/views/app_data_list_view.dart';
+import 'package:poke_vault_mobile_app/features/$featurePage/presentation/controllers/$pageName.controller.dart';
 import 'package:get/get.dart';
 
 class ${pageName.toPascalCase()}Page extends GetView<${pageName.toPascalCase()}Controller> {
@@ -100,8 +101,9 @@ class ${pageName.toPascalCase()}Page extends GetView<${pageName.toPascalCase()}C
 }
 ''';
 
-    controllerContent = '''
-import 'package:albahjah_pustaka_mobile/config/bases/base_api_pagination.dart';
+    controllerContent =
+        '''
+import 'package:poke_vault_mobile_app/config/bases/base_api_pagination.dart';
 
 class ${pageName.toPascalCase()}Controller extends ApiPagination {
 
@@ -170,7 +172,7 @@ void _addRouteAndPage(String featurePage, String pageName) {
   // Check if feature comment already exists
   final featureComment = '// ${featurePage.toPascalCase()}';
   final pageImport =
-      "import 'package:albahjah_pustaka_mobile/features/$featurePage/presentation/pages/$pageName.page.dart';";
+      "import 'package:poke_vault_mobile_app/features/$featurePage/presentation/pages/$pageName.page.dart';";
 
   String updatedPagesContentWithImport;
 
@@ -179,7 +181,7 @@ void _addRouteAndPage(String featurePage, String pageName) {
     final featureImportPattern = RegExp(
       r"(// " +
           featurePage.toPascalCase() +
-          r"\n(?:import 'package:albahjah_pustaka_mobile/features/" +
+          r"\n(?:import 'package:poke_vault_mobile_app/features/" +
           featurePage +
           r"/presentation/pages/[^']+\.page\.dart';\n)+)",
       multiLine: true,
@@ -202,11 +204,11 @@ void _addRouteAndPage(String featurePage, String pageName) {
       "    GetPage(name: Routes.$routeVarName, page: () => const ${pageName.toPascalCase()}Page()),";
 
   // Tambahkan GetPage baru sebelum "];" di dalam list pages
-  final updatedPagesContentFinal =
-      updatedPagesContentWithImport.replaceFirstMapped(
-    RegExp(r'(\];\s*\})'), // Cari tanda "];" diikuti penutup kelas "}"
-    (match) => '$newGetPage\n  ];\n}', // Tambahkan GetPage
-  );
+  final updatedPagesContentFinal = updatedPagesContentWithImport
+      .replaceFirstMapped(
+        RegExp(r'(\];\s*\})'), // Cari tanda "];" diikuti penutup kelas "}"
+        (match) => '$newGetPage\n  ];\n}', // Tambahkan GetPage
+      );
 
   // Tulis ulang file pages.dart
   pagesFile.writeAsStringSync(updatedPagesContentFinal);
@@ -240,10 +242,11 @@ void _addControllerToBinding(String featureName, String pageName) {
 
   // Add import for controller
   final controllerImport =
-      "import 'package:albahjah_pustaka_mobile/features/$featureName/presentation/controllers/$pageName.controller.dart';";
+      "import 'package:poke_vault_mobile_app/features/$featureName/presentation/controllers/$pageName.controller.dart';";
 
   // Find the class declaration and add import before it
-  final classPattern = r'\n\s*class\s+' +
+  final classPattern =
+      r'\n\s*class\s+' +
       featureName.toPascalCase() +
       r'Binding[s]?\s+extends\s+Bindings\s*\{';
 

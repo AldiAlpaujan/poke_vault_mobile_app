@@ -4,7 +4,6 @@ part of 'pages.dart';
 class Routes {
   static const String initialization = '/initialization';
   static const String login = '/login';
-  static const String products = '/products';
-  static const String productForm = '/product-form';
-  static const String productCategory = '/product-category';
+  static const String pokemonList = '/pokemon-list';
+  static const String pokemonDetail = '/pokemon-detail';
 }

@@ -77,8 +77,9 @@ Future<void> createFeature(String featureName) async {
 
 void _repositoryFile(String featureName, String path) {
   final file = File(path);
-  final content = '''
-import 'package:albahjah_pustaka_mobile/config/bases/base_data_state.dart';
+  final content =
+      '''
+import 'package:poke_vault_mobile_app/config/bases/base_data_state.dart';
 
 abstract class ${featureName.capitalize()}Repository {}
 ''';
@@ -87,11 +88,12 @@ abstract class ${featureName.capitalize()}Repository {}
 
 void _repositoryImplFile(String featureName, String path) {
   final file = File(path);
-  final content = '''
-import 'package:albahjah_pustaka_mobile/config/bases/base_api_repository.dart';
-import 'package:albahjah_pustaka_mobile/config/bases/base_data_state.dart';
-import 'package:albahjah_pustaka_mobile/features/$featureName/domain/repositories/${featureName}_repository.dart';
-import 'package:albahjah_pustaka_mobile/features/$featureName/data/src/${featureName}_api_service.dart';
+  final content =
+      '''
+import 'package:poke_vault_mobile_app/config/bases/base_api_repository.dart';
+import 'package:poke_vault_mobile_app/config/bases/base_data_state.dart';
+import 'package:poke_vault_mobile_app/features/$featureName/domain/repositories/${featureName}_repository.dart';
+import 'package:poke_vault_mobile_app/features/$featureName/data/src/${featureName}_api_service.dart';
 
 class ${featureName.capitalize()}RepositoryImpl extends ApiRepository implements ${featureName.capitalize()}Repository {
   final ${featureName.capitalize()}ApiService ${featureName}ApiService;
@@ -103,10 +105,11 @@ class ${featureName.capitalize()}RepositoryImpl extends ApiRepository implements
 
 void _srcApiFile(String featureName, String path) {
   final file = File(path);
-  final content = '''
+  final content =
+      '''
 import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
-import 'package:albahjah_pustaka_mobile/shared/constants/apis.dart';
+import 'package:poke_vault_mobile_app/shared/constants/apis.dart';
 
 part '${featureName}_api_service.g.dart';
 
@@ -127,12 +130,13 @@ void _bindingFile(String featureName) {
     '$featureBindingDirPath/${featureName}_binding.dart',
   );
 
-  final content = '''
+  final content =
+      '''
 import 'package:get/get.dart';
-import 'package:albahjah_pustaka_mobile/shared/utils/main_helpers.dart';
-import 'package:albahjah_pustaka_mobile/features/$featureName/data/repositories/${featureName}_repository_impl.dart';
-import 'package:albahjah_pustaka_mobile/features/$featureName/data/src/${featureName}_api_service.dart';
-import 'package:albahjah_pustaka_mobile/features/$featureName/domain/repositories/${featureName}_repository.dart';
+import 'package:poke_vault_mobile_app/shared/utils/main_helpers.dart';
+import 'package:poke_vault_mobile_app/features/$featureName/data/repositories/${featureName}_repository_impl.dart';
+import 'package:poke_vault_mobile_app/features/$featureName/data/src/${featureName}_api_service.dart';
+import 'package:poke_vault_mobile_app/features/$featureName/domain/repositories/${featureName}_repository.dart';
 
 class ${featureName.capitalize()}Binding extends Bindings {
   @override
@@ -156,12 +160,13 @@ class ${featureName.capitalize()}Binding extends Bindings {
 
   // Tambahkan import sebelum `class FeatureBindings`
   String newImport =
-      "import 'package:albahjah_pustaka_mobile/app/bindings/feature_bindings/${featureName}_binding.dart';";
+      "import 'package:poke_vault_mobile_app/app/bindings/feature_bindings/${featureName}_binding.dart';";
   String classPattern = r'(^\s*class FeatureBindings\s+extends\s+Bindings\s*{)';
 
   String updatedContent = fileFeatureBindingsContent.replaceFirstMapped(
-      RegExp(classPattern, multiLine: true),
-      (match) => '$newImport${match.group(0)}');
+    RegExp(classPattern, multiLine: true),
+    (match) => '$newImport${match.group(0)}',
+  );
 
   // Tambahkan dependencies baru sebelum `}` terakhir
   String pattern = r'\s*}\s*}\s*$';

@@ -1,15 +1,10 @@
-import 'package:get/get_core/get_core.dart';
-import 'package:get/get_instance/get_instance.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
 
 import 'package:poke_vault_mobile_app/features/common/presentation/pages/initialization.page.dart';
 
-import 'package:poke_vault_mobile_app/features/products/presentation/pages/products.page.dart';
-import 'package:poke_vault_mobile_app/features/products/presentation/controllers/products.controller.dart';
-import 'package:poke_vault_mobile_app/features/products/presentation/pages/product_form.page.dart';
-import 'package:poke_vault_mobile_app/features/products/presentation/controllers/product_form.controller.dart';
-import 'package:poke_vault_mobile_app/features/products/presentation/pages/product_category.page.dart';
-import 'package:poke_vault_mobile_app/features/products/presentation/controllers/product_category.controller.dart';
+// poke_vault_mobile_app
+import 'package:poke_vault_mobile_app/features/pokemon/presentation/pages/pokemon_list.page.dart';
+import 'package:poke_vault_mobile_app/features/pokemon/presentation/pages/pokemon_detail.page.dart';
 
 part 'routes.dart';
 
@@ -23,24 +18,7 @@ class AppPages {
       name: Routes.initialization,
       page: () => const InitializationPage(),
     ),
-    GetPage(
-      name: Routes.products,
-      page: () => const ProductsPage(),
-      binding: BindingsBuilder(() => Get.lazyPut(() => ProductsController())),
-    ),
-    GetPage(
-      name: Routes.productForm,
-      page: () => const ProductFormPage(),
-      binding: BindingsBuilder(
-        () => Get.lazyPut(() => ProductFormController()),
-      ),
-    ),
-    GetPage(
-      name: Routes.productCategory,
-      page: () => const ProductCategoryPage(),
-      binding: BindingsBuilder(
-        () => Get.lazyPut(() => ProductCategoryController()),
-      ),
-    ),
+    GetPage(name: Routes.pokemonList, page: () => const PokemonListPage()),
+    GetPage(name: Routes.pokemonDetail, page: () => const PokemonDetailPage()),
   ];
 }

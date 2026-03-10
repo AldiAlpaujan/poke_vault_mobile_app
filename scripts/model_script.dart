@@ -16,11 +16,7 @@ class ModelField {
   final String type;
   final String? jsonKey;
 
-  ModelField({
-    required this.name,
-    required this.type,
-    this.jsonKey,
-  });
+  ModelField({required this.name, required this.type, this.jsonKey});
 }
 
 Future<void> createModel({
@@ -57,10 +53,7 @@ Future<void> createModel({
       isList: isList,
     );
   } else {
-    content = _generateRequestModel(
-      modelName: modelName,
-      fields: fields ?? [],
-    );
+    content = _generateRequestModel(modelName: modelName, fields: fields ?? []);
   }
 
   await modelFile.writeAsString(content);
@@ -81,7 +74,7 @@ String _generateResponseModel({
   // Imports
   buffer.writeln("import 'package:json_annotation/json_annotation.dart';");
   buffer.writeln(
-    "import 'package:albahjah_pustaka_mobile/config/bases/base_response.dart';",
+    "import 'package:poke_vault_mobile_app/config/bases/base_response.dart';",
   );
   buffer.writeln();
   buffer.writeln("part '$fileName.g.dart';");

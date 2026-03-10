@@ -17,7 +17,7 @@ class _InitializationPageState extends State<InitializationPage> {
     await Future.delayed(const Duration(milliseconds: 1000));
     NotificationService.initNotification();
     CloudMessagingService.initializeMessaging();
-    Get.offAllNamed(Routes.products);
+    Get.offAllNamed(Routes.pokemonList);
   }
 
   @override

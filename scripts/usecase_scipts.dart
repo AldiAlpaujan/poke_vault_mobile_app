@@ -108,9 +108,9 @@ void _createUseCase(String name, String featureName) {
 
   final content =
       '''
-import 'package:albahjah_pustaka_mobile/config/bases/base_data_state.dart';
-import 'package:albahjah_pustaka_mobile/config/bases/base_usecase.dart';
-import 'package:albahjah_pustaka_mobile/features/$featureName/domain/repositories/${featureName}_repository.dart';
+import 'package:poke_vault_mobile_app/config/bases/base_data_state.dart';
+import 'package:poke_vault_mobile_app/config/bases/base_usecase.dart';
+import 'package:poke_vault_mobile_app/features/$featureName/domain/repositories/${featureName}_repository.dart';
 
 class ${useCaseName}Uc extends UseCase<DataState<T>, void> {
   final ${featureName.capitalize()}Repository ${featureName}Repository;
@@ -142,7 +142,7 @@ void _signUseCaseIntoBindings(String name, String featureName) {
       r'Binding\s+extends\s+Bindings\s*\{';
 
   String newImport =
-      "import 'package:albahjah_pustaka_mobile/features/$featureName/domain/usecases/${name}_uc.dart';";
+      "import 'package:poke_vault_mobile_app/features/$featureName/domain/usecases/${name}_uc.dart';";
 
   String updatedContent = content.replaceFirstMapped(
     RegExp(classPattern, multiLine: true),

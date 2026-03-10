@@ -26,8 +26,8 @@ enum HttpMethod {
   bool get usesQuery => this == HttpMethod.get;
 
   static HttpMethod fromString(String type) => HttpMethod.values.firstWhere(
-        (elm) => elm.name.toLowerCase() == type.toLowerCase(),
-      );
+    (elm) => elm.name.toLowerCase() == type.toLowerCase(),
+  );
 }
 
 Future<void> createCompleteUseCase({
@@ -138,11 +138,11 @@ Future<void> _addMethodToRepository({
   // Add import for response model if needed
   if (responseModel != 'DefaultRes' && !responseModel.contains('?')) {
     final resImport =
-        "import 'package:albahjah_pustaka_mobile/features/$featureName/domain/models/response/${responseModel.toLowerCase()}.dart';";
+        "import 'package:poke_vault_mobile_app/features/$featureName/domain/models/response/${responseModel.toLowerCase()}.dart';";
     if (!content.contains(resImport)) {
       content = content.replaceFirst(
-        "import 'package:albahjah_pustaka_mobile/config/bases/base_data_state.dart';",
-        "import 'package:albahjah_pustaka_mobile/config/bases/base_data_state.dart';\n$resImport",
+        "import 'package:poke_vault_mobile_app/config/bases/base_data_state.dart';",
+        "import 'package:poke_vault_mobile_app/config/bases/base_data_state.dart';\n$resImport",
       );
     }
   }
@@ -150,11 +150,11 @@ Future<void> _addMethodToRepository({
   // Add import for request model if needed
   if (requestModel != 'void' && !requestModel.contains('?')) {
     final reqImport =
-        "import 'package:albahjah_pustaka_mobile/features/$featureName/domain/models/request/${requestModel.toLowerCase()}.dart';";
+        "import 'package:poke_vault_mobile_app/features/$featureName/domain/models/request/${requestModel.toLowerCase()}.dart';";
     if (!content.contains(reqImport)) {
       content = content.replaceFirst(
-        "import 'package:albahjah_pustaka_mobile/config/bases/base_data_state.dart';",
-        "import 'package:albahjah_pustaka_mobile/config/bases/base_data_state.dart';\n$reqImport",
+        "import 'package:poke_vault_mobile_app/config/bases/base_data_state.dart';",
+        "import 'package:poke_vault_mobile_app/config/bases/base_data_state.dart';\n$reqImport",
       );
     }
   }
@@ -164,10 +164,7 @@ Future<void> _addMethodToRepository({
   final methodSignature =
       '  Future<DataState<$responseModel>> $methodName($params);';
 
-  content = content.replaceFirst(
-    RegExp(r'}[\s]*$'),
-    '\n$methodSignature\n}',
-  );
+  content = content.replaceFirst(RegExp(r'}[\s]*$'), '\n$methodSignature\n}');
 
   file.writeAsStringSync(content);
   print('✓ Added method to repository interface');
@@ -203,7 +200,7 @@ Future<void> _addMethodToApiService({
   // Add import for response model if needed
   if (responseModel != 'DefaultRes' && !responseModel.contains('?')) {
     final resImport =
-        "import 'package:albahjah_pustaka_mobile/features/$featureName/domain/models/response/${responseModel.toLowerCase()}.dart';";
+        "import 'package:poke_vault_mobile_app/features/$featureName/domain/models/response/${responseModel.toLowerCase()}.dart';";
     if (!content.contains(resImport)) {
       content = content.replaceFirst(
         "import 'package:dio/dio.dart';",
@@ -215,7 +212,7 @@ Future<void> _addMethodToApiService({
   // Add import for request model if needed
   if (requestModel != 'void' && !requestModel.contains('?')) {
     final reqImport =
-        "import 'package:albahjah_pustaka_mobile/features/$featureName/domain/models/request/${requestModel.toLowerCase()}.dart';";
+        "import 'package:poke_vault_mobile_app/features/$featureName/domain/models/request/${requestModel.toLowerCase()}.dart';";
     if (!content.contains(reqImport)) {
       content = content.replaceFirst(
         "import 'package:dio/dio.dart';",
@@ -253,10 +250,7 @@ Future<void> _addMethodToApiService({
   buffer.writeln(');');
 
   // Insert before closing brace
-  content = content.replaceFirst(
-    RegExp(r'}[\s]*$'),
-    '$buffer}',
-  );
+  content = content.replaceFirst(RegExp(r'}[\s]*$'), '$buffer}');
 
   file.writeAsStringSync(content);
   print('✓ Added method to API service');
@@ -289,15 +283,15 @@ Future<void> _addMethodToRepositoryImpl({
   // Add import for response model if needed
   if (responseModel != 'DefaultRes' && !responseModel.contains('?')) {
     final resImport =
-        "import 'package:albahjah_pustaka_mobile/features/$featureName/domain/models/response/${responseModel.toLowerCase()}.dart';";
+        "import 'package:poke_vault_mobile_app/features/$featureName/domain/models/response/${responseModel.toLowerCase()}.dart';";
     if (!content.contains(resImport)) {
       final importPos = content.indexOf(
-        "import 'package:albahjah_pustaka_mobile/features/$featureName/data/src/${featureName}_api_service.dart';",
+        "import 'package:poke_vault_mobile_app/features/$featureName/data/src/${featureName}_api_service.dart';",
       );
       if (importPos != -1) {
         content = content.replaceFirst(
-          "import 'package:albahjah_pustaka_mobile/features/$featureName/data/src/${featureName}_api_service.dart';",
-          "import 'package:albahjah_pustaka_mobile/features/$featureName/data/src/${featureName}_api_service.dart';\n$resImport",
+          "import 'package:poke_vault_mobile_app/features/$featureName/data/src/${featureName}_api_service.dart';",
+          "import 'package:poke_vault_mobile_app/features/$featureName/data/src/${featureName}_api_service.dart';\n$resImport",
         );
       }
     }
@@ -306,15 +300,15 @@ Future<void> _addMethodToRepositoryImpl({
   // Add import for request model if needed
   if (requestModel != 'void' && !requestModel.contains('?')) {
     final reqImport =
-        "import 'package:albahjah_pustaka_mobile/features/$featureName/domain/models/request/${requestModel.toLowerCase()}.dart';";
+        "import 'package:poke_vault_mobile_app/features/$featureName/domain/models/request/${requestModel.toLowerCase()}.dart';";
     if (!content.contains(reqImport)) {
       final importPos = content.indexOf(
-        "import 'package:albahjah_pustaka_mobile/features/$featureName/data/src/${featureName}_api_service.dart';",
+        "import 'package:poke_vault_mobile_app/features/$featureName/data/src/${featureName}_api_service.dart';",
       );
       if (importPos != -1) {
         content = content.replaceFirst(
-          "import 'package:albahjah_pustaka_mobile/features/$featureName/data/src/${featureName}_api_service.dart';",
-          "import 'package:albahjah_pustaka_mobile/features/$featureName/data/src/${featureName}_api_service.dart';\n$reqImport",
+          "import 'package:poke_vault_mobile_app/features/$featureName/data/src/${featureName}_api_service.dart';",
+          "import 'package:poke_vault_mobile_app/features/$featureName/data/src/${featureName}_api_service.dart';\n$reqImport",
         );
       }
     }
@@ -326,7 +320,8 @@ Future<void> _addMethodToRepositoryImpl({
       ? '${featureName}ApiService.$methodName(request)'
       : '${featureName}ApiService.$methodName()';
 
-  final methodImpl = '''
+  final methodImpl =
+      '''
 
   @override
   Future<DataState<$responseModel>> $methodName($params) {
@@ -336,10 +331,7 @@ Future<void> _addMethodToRepositoryImpl({
   }
 ''';
 
-  content = content.replaceFirst(
-    RegExp(r'}[\s]*$'),
-    '$methodImpl}',
-  );
+  content = content.replaceFirst(RegExp(r'}[\s]*$'), '$methodImpl}');
 
   file.writeAsStringSync(content);
   print('✓ Added method to repository implementation');
@@ -371,26 +363,26 @@ Future<void> _createUseCaseFile({
 
   // Imports
   buffer.writeln(
-    "import 'package:albahjah_pustaka_mobile/config/bases/base_data_state.dart';",
+    "import 'package:poke_vault_mobile_app/config/bases/base_data_state.dart';",
   );
   buffer.writeln(
-    "import 'package:albahjah_pustaka_mobile/config/bases/base_usecase.dart';",
+    "import 'package:poke_vault_mobile_app/config/bases/base_usecase.dart';",
   );
   buffer.writeln(
-    "import 'package:albahjah_pustaka_mobile/features/$featureName/domain/repositories/${featureName}_repository.dart';",
+    "import 'package:poke_vault_mobile_app/features/$featureName/domain/repositories/${featureName}_repository.dart';",
   );
 
   // Import response model
   if (responseModel != 'DefaultRes' && !responseModel.contains('?')) {
     buffer.writeln(
-      "import 'package:albahjah_pustaka_mobile/features/$featureName/domain/models/response/${responseModel.toLowerCase()}.dart';",
+      "import 'package:poke_vault_mobile_app/features/$featureName/domain/models/response/${responseModel.toLowerCase()}.dart';",
     );
   }
 
   // Import request model
   if (requestModel != 'void' && !requestModel.contains('?')) {
     buffer.writeln(
-      "import 'package:albahjah_pustaka_mobile/features/$featureName/domain/models/request/${requestModel.toLowerCase()}.dart';",
+      "import 'package:poke_vault_mobile_app/features/$featureName/domain/models/request/${requestModel.toLowerCase()}.dart';",
     );
   }
 
@@ -446,10 +438,12 @@ Future<void> _registerUseCaseInBindings({
 
   // Add import
   final useCaseImport =
-      "import 'package:albahjah_pustaka_mobile/features/$featureName/domain/usecases/${useCaseName.toLowerCase()}_uc.dart';";
+      "import 'package:poke_vault_mobile_app/features/$featureName/domain/usecases/${useCaseName.toLowerCase()}_uc.dart';";
 
   final classPattern =
-      r'\n\s*class\s+' + featureName.toPascalCase() + r'Binding\s+extends\s+Bindings\s*\{';
+      r'\n\s*class\s+' +
+      featureName.toPascalCase() +
+      r'Binding\s+extends\s+Bindings\s*\{';
 
   content = content.replaceFirstMapped(
     RegExp(classPattern, multiLine: true),
@@ -458,7 +452,8 @@ Future<void> _registerUseCaseInBindings({
 
   // Add dependency registration
   final repoClassName = '${featureName.toPascalCase()}Repository';
-  final dependency = '''
+  final dependency =
+      '''
 
     Get.lazyPut(
       () => $className(Get.find<$repoClassName>()),
