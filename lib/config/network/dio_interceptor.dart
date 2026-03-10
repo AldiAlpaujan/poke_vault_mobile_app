@@ -31,7 +31,21 @@ class DioInterceptor extends Interceptor with LogMixin {
 
   @override
   void onResponse(Response response, ResponseInterceptorHandler handler) async {
-    super.onResponse(response, handler);
+    final isWrap = response.data['isWrap'] == true;
+
+    if (!isWrap) {
+      final data = response.data;
+      int? count = data['count'];
+      dynamic results = data['results'];
+
+      response.data = {
+        'isWrap': true,
+        'code': response.statusCode ?? 200,
+        if (count != null) 'count': count,
+        'data': results ?? response.data,
+      };
+    }
+
     switch (response.requestOptions.method) {
       case 'GET':
         logResponseGet(response.data, response.requestOptions.path);
@@ -46,6 +60,7 @@ class DioInterceptor extends Interceptor with LogMixin {
         logResponseDelete(response.data, response.requestOptions.path);
         break;
     }
+    super.onResponse(response, handler);
   }
 
   @override

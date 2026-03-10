@@ -81,6 +81,9 @@ dependencies:
   # local storage & database
   shared_preferences: ^2.3.3
 
+  # image cached
+  cached_network_image: ^3.4.1
+
   # currency format
   currency_text_input_formatter: ^2.3.0
 
@@ -120,6 +123,10 @@ dev_dependencies:
 
 flutter_gen:
   output: lib/shared/constants/gen/
+  integrations:
+    image: false
+    flutter_svg: false
+
 
 flutter:
   default-flavor: development

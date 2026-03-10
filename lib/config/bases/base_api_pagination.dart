@@ -8,7 +8,8 @@ import 'package:get/get.dart';
 abstract class ApiPagination<T> extends GetxController with HandlerApiMixin {
   var _keyword = '';
   var _currentPage = 1;
-  final _rowsPerPage = 50;
+  var _offset = 0;
+  final _rowsPerPage = 20;
   final _noData = true.obs;
   final _isError = false.obs;
   final _isLoading = false.obs;
@@ -28,6 +29,7 @@ abstract class ApiPagination<T> extends GetxController with HandlerApiMixin {
   ) async {
     if (!isLoad) {
       _currentPage = 1;
+      _offset = 0;
       _noData.value = false;
       _isError.value = false;
       _isLoading.value = true;
@@ -35,7 +37,12 @@ abstract class ApiPagination<T> extends GetxController with HandlerApiMixin {
     _keyword = keyword ?? _keyword;
 
     final result = await request(
-      PaginationReq(page: _currentPage, limit: _rowsPerPage, search: _keyword),
+      PaginationReq(
+        page: _currentPage,
+        offset: _offset,
+        limit: _rowsPerPage,
+        search: _keyword,
+      ),
     );
     _isLoading.value = false;
 
@@ -46,6 +53,7 @@ abstract class ApiPagination<T> extends GetxController with HandlerApiMixin {
         _noData.value = dataTmp.length < _rowsPerPage;
         _data.value = !isLoad ? dataTmp : [..._data(), ...dataTmp];
         _currentPage++;
+        _offset = _rowsPerPage * (_currentPage - 1);
       },
       onError: (_) {
         _isError.value = true;

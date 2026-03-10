@@ -1,8 +1,11 @@
 import 'dart:io';
 
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:poke_vault_mobile_app/shared/constants/gen/assets.gen.dart';
 import 'package:poke_vault_mobile_app/shared/enums/e_image_type.dart';
+
+import '../../../shared/constants/gen/assets.gen.dart';
 
 class AppImage extends StatelessWidget {
   final String url;
@@ -13,6 +16,7 @@ class AppImage extends StatelessWidget {
   final double? width;
   final BoxFit? fit;
   final BoxFit? imgHandlingfit;
+  final Color? color;
   final BorderRadiusGeometry borderRadius;
   const AppImage({
     super.key,
@@ -25,6 +29,7 @@ class AppImage extends StatelessWidget {
     this.fit = BoxFit.cover,
     this.imgHandlingfit,
     this.borderRadius = BorderRadius.zero,
+    this.color,
   });
 
   @override
@@ -43,19 +48,20 @@ class AppImage extends StatelessWidget {
       );
     }
     if (type.isNetwork) {
-      return Image.network(
-        url,
+      return CachedNetworkImage(
+        fit: fit,
+        imageUrl: url,
         height: height,
         width: width,
-        fit: fit,
-        errorBuilder: (_, _, _) => errorImg(),
-        loadingBuilder: (context, child, loadingProgress) {
-          if (loadingProgress == null) {
-            return child;
-          } else {
-            return errorImg();
+        color: color,
+        colorBlendMode: BlendMode.srcIn,
+        placeholder: (context, url) => errorImg(),
+        errorListener: (err) {
+          if (kDebugMode) {
+            print("IMG ERROR ${err.toString().split('uri = ')[1]}");
           }
         },
+        errorWidget: (context, url, error) => errorImg(),
       );
     } else {
       return Image.asset(
@@ -70,7 +76,7 @@ class AppImage extends StatelessWidget {
 
   Widget errorImg() {
     return Image.asset(
-      alt ?? Assets.image.imgError.path,
+      alt ?? Assets.image.imgError,
       width: width,
       height: height,
       fit: fit,
