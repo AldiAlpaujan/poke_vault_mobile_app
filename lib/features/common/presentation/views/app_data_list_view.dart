@@ -13,7 +13,8 @@ class AppDataListView extends StatelessWidget {
   final EdgeInsetsGeometry padding;
   final Future Function() refreshData;
   final Future Function()? loadData;
-  final List<Widget> children;
+  final List<Widget>? children;
+  final Widget? listBuilder;
   const AppDataListView({
     super.key,
     this.isLoading = false,
@@ -22,7 +23,8 @@ class AppDataListView extends StatelessWidget {
     this.noData = true,
     required this.refreshData,
     this.loadData,
-    required this.children,
+    this.children,
+    this.listBuilder,
     this.padding = const EdgeInsets.symmetric(
       horizontal: AppTheme.padding,
       vertical: 4,
@@ -40,7 +42,9 @@ class AppDataListView extends StatelessWidget {
           noDataToLoad: noData,
           onRefresh: refreshData,
           onLoading: loadData,
-          child: ListView(padding: padding, children: children),
+          child:
+              listBuilder ??
+              ListView(padding: padding, children: children ?? []),
         ),
       ],
     );

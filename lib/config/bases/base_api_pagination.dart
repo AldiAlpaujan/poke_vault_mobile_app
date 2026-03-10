@@ -13,6 +13,7 @@ abstract class ApiPagination<T> extends GetxController with HandlerApiMixin {
   final _noData = true.obs;
   final _isError = false.obs;
   final _isLoading = false.obs;
+  var _allData = <T>[];
   final _data = <T>[].obs;
 
   List<T> get data => _data();
@@ -51,7 +52,9 @@ abstract class ApiPagination<T> extends GetxController with HandlerApiMixin {
       onSuccess: (v) {
         final dataTmp = ((v as BaseResponse).data as List<T>?) ?? [];
         _noData.value = dataTmp.length < _rowsPerPage;
-        _data.value = !isLoad ? dataTmp : [..._data(), ...dataTmp];
+        final merged = !isLoad ? dataTmp : [..._allData, ...dataTmp];
+        _allData = merged;
+        _data.value = merged;
         _currentPage++;
         _offset = _rowsPerPage * (_currentPage - 1);
       },
@@ -70,4 +73,18 @@ abstract class ApiPagination<T> extends GetxController with HandlerApiMixin {
 
   @protected
   Future<void> loadData();
+
+  @protected
+  bool matchSearch(T item, String keyword) => true;
+
+  void search(String keyword) {
+    _keyword = keyword;
+    if (keyword.isEmpty) {
+      _data.value = _allData;
+    } else {
+      _data.value = _allData
+          .where((item) => matchSearch(item, keyword))
+          .toList();
+    }
+  }
 }

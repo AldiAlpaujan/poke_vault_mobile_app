@@ -77,7 +77,7 @@ class _AppBarSearchState extends State<AppBarSearch> {
           decoration: const BoxDecoration(
             boxShadow: [
               BoxShadow(
-                blurRadius: 8,
+                blurRadius: 1,
                 color: AppTheme.shadowColor,
                 offset: Offset(-1, 0),
               ),

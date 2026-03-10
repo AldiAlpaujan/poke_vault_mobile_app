@@ -58,8 +58,11 @@ class $AssetsImageGen {
   /// File path: assets/image/img-error.jpg
   String get imgError => 'assets/image/img-error.jpg';
 
+  /// File path: assets/image/poke-ball-placeholder.png
+  String get pokeBallPlaceholder => 'assets/image/poke-ball-placeholder.png';
+
   /// List of all assets
-  List<String> get values => [readme, imgError];
+  List<String> get values => [readme, imgError, pokeBallPlaceholder];
 }
 
 class $AssetsSvgGen {
@@ -71,11 +74,14 @@ class $AssetsSvgGen {
   /// File path: assets/svg/arrow-left.svg
   String get arrowLeft => 'assets/svg/arrow-left.svg';
 
+  /// File path: assets/svg/poke_ball.svg
+  String get pokeBall => 'assets/svg/poke_ball.svg';
+
   /// File path: assets/svg/search-normal.svg
   String get searchNormal => 'assets/svg/search-normal.svg';
 
   /// List of all assets
-  List<String> get values => [readme, arrowLeft, searchNormal];
+  List<String> get values => [readme, arrowLeft, pokeBall, searchNormal];
 }
 
 class Assets {
