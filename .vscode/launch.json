@@ -21,5 +21,16 @@
         "production"
       ]
     },
+    {
+      "name": "development (profile)",
+      "type": "dart",
+      "request": "launch",
+      "program": "lib/main/main_development.dart",
+      "args": [
+        "--flavor",
+        "development",
+        "--profile"
+      ]
+    }
   ]
 }

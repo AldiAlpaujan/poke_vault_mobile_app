@@ -5,7 +5,7 @@ import 'package:poke_vault_mobile_app/features/pokemon/data/src/pokemon_api_serv
 import 'package:poke_vault_mobile_app/features/pokemon/domain/repositories/pokemon_repository.dart';
 import 'package:poke_vault_mobile_app/features/pokemon/presentation/controllers/pokemon_list.controller.dart';
 import 'package:poke_vault_mobile_app/features/pokemon/presentation/controllers/pokemon_detail.controller.dart';
-import 'package:poke_vault_mobile_app/features/pokemon/domain/usecases/get_pokemon_list_uc.dart';
+import 'package:poke_vault_mobile_app/features/pokemon/domain/usecases/get_pokemon_list_uc.dart';import 'package:poke_vault_mobile_app/features/pokemon/domain/usecases/get_pokemon_detail_uc.dart';
 
 class PokemonBinding extends Bindings {
   @override
@@ -22,6 +22,10 @@ class PokemonBinding extends Bindings {
     // Use cases
     Get.lazyPut(
       () => GetPokemonListUc(Get.find<PokemonRepository>()),
+      fenix: true,
+    );
+    Get.lazyPut(
+      () => GetPokemonDetailUc(Get.find<PokemonRepository>()),
       fenix: true,
     );
   }

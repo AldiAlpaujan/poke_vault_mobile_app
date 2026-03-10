@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:poke_vault_mobile_app/features/pokemon/domain/models/request/get_pokemon_list_req.dart';
+import 'package:poke_vault_mobile_app/features/pokemon/domain/models/response/pokemon_detail_res.dart';
 import 'package:poke_vault_mobile_app/features/pokemon/domain/models/response/pokemon_res.dart';
 import 'package:retrofit/retrofit.dart';
 import 'package:poke_vault_mobile_app/shared/constants/apis.dart';
@@ -14,4 +15,7 @@ abstract class PokemonApiService {
   Future<HttpResponse<PokemonRes>> getPokemonList(
     @Queries() GetPokemonListReq request,
   );
+
+  @GET(Apis.getPokemonDetail)
+  Future<HttpResponse<PokemonDetailRes>> getPokemonDetail(@Path('id') int id);
 }
