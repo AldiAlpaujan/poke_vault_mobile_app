@@ -75,13 +75,9 @@ class _AppBarSearchState extends State<AppBarSearch> {
         onPopInvokedWithResult: (_, _) => onWillPop(),
         child: Container(
           decoration: const BoxDecoration(
-            boxShadow: [
-              BoxShadow(
-                blurRadius: 1,
-                color: AppTheme.shadowColor,
-                offset: Offset(-1, 0),
-              ),
-            ],
+            border: Border(
+              bottom: BorderSide(color: AppTheme.borderColor, width: 0),
+            ),
           ),
           child: AppBar(
             elevation: 0,
