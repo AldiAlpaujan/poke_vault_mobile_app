@@ -1,23 +1,29 @@
+import 'package:get/get.dart';
 import 'package:poke_vault_mobile_app/config/bases/base_api_pagination.dart';
+import 'package:poke_vault_mobile_app/features/pokemon/domain/models/request/get_pokemon_list_req.dart';
+import 'package:poke_vault_mobile_app/features/pokemon/domain/models/response/pokemon_res.dart';
+import 'package:poke_vault_mobile_app/features/pokemon/domain/usecases/get_pokemon_list_uc.dart';
 
-class PokemonListController extends ApiPagination {
+class PokemonListController extends ApiPagination<Pokemon> {
   @override
   Future<void> getData({bool isLoad = false, String? keyword}) async {
-    // await runRequest(
-    //   usecase,
-    //   isLoad,
-    //   keyword,
-    // );
-  }
-
-  @override
-  Future<void> loadData() async {
-    await getData();
+    await runRequest(
+      (req) => Get.find<GetPokemonListUc>()(
+        request: GetPokemonListReq.fromParent(req),
+      ),
+      isLoad,
+      keyword,
+    );
   }
 
   @override
   Future<void> refreshData() {
-    return getData(isLoad: true);
+    return getData();
+  }
+
+  @override
+  Future<void> loadData() async {
+    await getData(isLoad: true);
   }
 
   @override

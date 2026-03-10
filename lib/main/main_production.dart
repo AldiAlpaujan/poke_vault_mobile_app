@@ -8,7 +8,7 @@ void main() {
     AppConfig(
       flavor: AppFlavor.production,
       appName: "Poké Vault",
-      apiUrl: "https://aldimalpaujanbackend-production.up.railway.app/api",
+      apiUrl: "https://pokeapi.co/api/v2",
     ),
   );
   bootstrap();
