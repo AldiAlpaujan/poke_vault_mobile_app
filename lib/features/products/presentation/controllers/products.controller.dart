@@ -1,12 +1,12 @@
-import 'package:flutter_project_template/app/routes/pages.dart';
-import 'package:flutter_project_template/config/bases/base_api_pagination.dart';
-import 'package:flutter_project_template/features/products/domain/models/request/delete_product_req.dart';
-import 'package:flutter_project_template/features/products/domain/models/request/product_req.dart';
-import 'package:flutter_project_template/features/products/domain/models/response/product_res.dart';
-import 'package:flutter_project_template/features/products/domain/usecases/delete_products_uc.dart';
-import 'package:flutter_project_template/features/products/domain/usecases/get_products_uc.dart';
-import 'package:flutter_project_template/features/products/presentation/views/product_detail.view.dart';
-import 'package:flutter_project_template/shared/utils/main_helpers.dart';
+import 'package:poke_vault_mobile_app/app/routes/pages.dart';
+import 'package:poke_vault_mobile_app/config/bases/base_api_pagination.dart';
+import 'package:poke_vault_mobile_app/features/products/domain/models/request/delete_product_req.dart';
+import 'package:poke_vault_mobile_app/features/products/domain/models/request/product_req.dart';
+import 'package:poke_vault_mobile_app/features/products/domain/models/response/product_res.dart';
+import 'package:poke_vault_mobile_app/features/products/domain/usecases/delete_products_uc.dart';
+import 'package:poke_vault_mobile_app/features/products/domain/usecases/get_products_uc.dart';
+import 'package:poke_vault_mobile_app/features/products/presentation/views/product_detail.view.dart';
+import 'package:poke_vault_mobile_app/shared/utils/main_helpers.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

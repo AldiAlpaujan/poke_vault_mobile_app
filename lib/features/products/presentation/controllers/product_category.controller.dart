@@ -1,7 +1,7 @@
-import 'package:flutter_project_template/config/bases/base_api_pagination.dart';
-import 'package:flutter_project_template/features/products/domain/models/request/product_category_lookup_req.dart';
-import 'package:flutter_project_template/features/products/domain/models/response/product_category_lookup_res.dart';
-import 'package:flutter_project_template/features/products/domain/usecases/product_category_lookup_uc.dart';
+import 'package:poke_vault_mobile_app/config/bases/base_api_pagination.dart';
+import 'package:poke_vault_mobile_app/features/products/domain/models/request/product_category_lookup_req.dart';
+import 'package:poke_vault_mobile_app/features/products/domain/models/response/product_category_lookup_res.dart';
+import 'package:poke_vault_mobile_app/features/products/domain/usecases/product_category_lookup_uc.dart';
 import 'package:get/get.dart';
 
 class ProductCategoryController extends ApiPagination<ProductCategory> {

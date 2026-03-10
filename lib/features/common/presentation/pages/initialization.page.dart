@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_project_template/app/routes/pages.dart';
-import 'package:flutter_project_template/shared/services/cloud_messaging_service.dart';
-import 'package:flutter_project_template/shared/services/notification_service.dart';
-import 'package:flutter_project_template/shared/utils/responsive.dart';
+import 'package:poke_vault_mobile_app/app/routes/pages.dart';
+import 'package:poke_vault_mobile_app/shared/services/cloud_messaging_service.dart';
+import 'package:poke_vault_mobile_app/shared/services/notification_service.dart';
+import 'package:poke_vault_mobile_app/shared/utils/responsive.dart';
 import 'package:get/get.dart';
 
 class InitializationPage extends StatefulWidget {

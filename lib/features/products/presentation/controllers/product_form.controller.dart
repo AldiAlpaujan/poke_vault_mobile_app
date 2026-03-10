@@ -1,13 +1,13 @@
-import 'package:flutter_project_template/app/routes/pages.dart';
-import 'package:flutter_project_template/features/products/domain/models/request/create_product_req.dart';
-import 'package:flutter_project_template/features/products/domain/models/request/update_product_req.dart';
-import 'package:flutter_project_template/features/products/domain/models/response/product_category_lookup_res.dart';
-import 'package:flutter_project_template/features/products/domain/models/response/product_res.dart';
-import 'package:flutter_project_template/features/products/domain/usecases/create_products_uc.dart';
-import 'package:flutter_project_template/features/products/domain/usecases/update_products_uc.dart';
-import 'package:flutter_project_template/shared/utils/formatter_mixin.dart';
-import 'package:flutter_project_template/shared/utils/handler_api_mixin.dart';
-import 'package:flutter_project_template/shared/utils/main_helpers.dart';
+import 'package:poke_vault_mobile_app/app/routes/pages.dart';
+import 'package:poke_vault_mobile_app/features/products/domain/models/request/create_product_req.dart';
+import 'package:poke_vault_mobile_app/features/products/domain/models/request/update_product_req.dart';
+import 'package:poke_vault_mobile_app/features/products/domain/models/response/product_category_lookup_res.dart';
+import 'package:poke_vault_mobile_app/features/products/domain/models/response/product_res.dart';
+import 'package:poke_vault_mobile_app/features/products/domain/usecases/create_products_uc.dart';
+import 'package:poke_vault_mobile_app/features/products/domain/usecases/update_products_uc.dart';
+import 'package:poke_vault_mobile_app/shared/utils/formatter_mixin.dart';
+import 'package:poke_vault_mobile_app/shared/utils/handler_api_mixin.dart';
+import 'package:poke_vault_mobile_app/shared/utils/main_helpers.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

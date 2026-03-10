@@ -2,9 +2,9 @@ import 'dart:io';
 
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
-import 'package:flutter_project_template/shared/utils/function.dart';
-import 'package:flutter_project_template/shared/utils/log_mixin.dart';
-import 'package:flutter_project_template/shared/utils/main_helpers.dart';
+import 'package:poke_vault_mobile_app/shared/utils/function.dart';
+import 'package:poke_vault_mobile_app/shared/utils/log_mixin.dart';
+import 'package:poke_vault_mobile_app/shared/utils/main_helpers.dart';
 
 class DioInterceptor extends Interceptor with LogMixin {
   @override

@@ -1,4 +1,4 @@
-import 'package:flutter_project_template/shared/enums/app_flavor.dart';
+import 'package:poke_vault_mobile_app/shared/enums/app_flavor.dart';
 
 class AppConfig {
   final AppFlavor flavor;

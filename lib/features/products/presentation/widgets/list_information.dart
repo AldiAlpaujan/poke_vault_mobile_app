@@ -1,6 +1,6 @@
-import 'package:flutter_project_template/config/theme/theme.dart';
-import 'package:flutter_project_template/features/products/presentation/controllers/products.controller.dart';
-import 'package:flutter_project_template/shared/utils/widget_extenstion.dart';
+import 'package:poke_vault_mobile_app/config/theme/theme.dart';
+import 'package:poke_vault_mobile_app/features/products/presentation/controllers/products.controller.dart';
+import 'package:poke_vault_mobile_app/shared/utils/widget_extenstion.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_instance/get_instance.dart';

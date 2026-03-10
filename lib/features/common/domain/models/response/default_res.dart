@@ -1,4 +1,4 @@
-import 'package:flutter_project_template/config/bases/base_response.dart';
+import 'package:poke_vault_mobile_app/config/bases/base_response.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'default_res.g.dart';

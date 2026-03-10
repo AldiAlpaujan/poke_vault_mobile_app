@@ -2,14 +2,14 @@ import 'package:get/get_core/get_core.dart';
 import 'package:get/get_instance/get_instance.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
 
-import 'package:flutter_project_template/features/common/presentation/pages/initialization.page.dart';
+import 'package:poke_vault_mobile_app/features/common/presentation/pages/initialization.page.dart';
 
-import 'package:flutter_project_template/features/products/presentation/pages/products.page.dart';
-import 'package:flutter_project_template/features/products/presentation/controllers/products.controller.dart';
-import 'package:flutter_project_template/features/products/presentation/pages/product_form.page.dart';
-import 'package:flutter_project_template/features/products/presentation/controllers/product_form.controller.dart';
-import 'package:flutter_project_template/features/products/presentation/pages/product_category.page.dart';
-import 'package:flutter_project_template/features/products/presentation/controllers/product_category.controller.dart';
+import 'package:poke_vault_mobile_app/features/products/presentation/pages/products.page.dart';
+import 'package:poke_vault_mobile_app/features/products/presentation/controllers/products.controller.dart';
+import 'package:poke_vault_mobile_app/features/products/presentation/pages/product_form.page.dart';
+import 'package:poke_vault_mobile_app/features/products/presentation/controllers/product_form.controller.dart';
+import 'package:poke_vault_mobile_app/features/products/presentation/pages/product_category.page.dart';
+import 'package:poke_vault_mobile_app/features/products/presentation/controllers/product_category.controller.dart';
 
 part 'routes.dart';
 

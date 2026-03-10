@@ -52,7 +52,7 @@ A production-ready Flutter template project implementing Clean Architecture with
 ## Project Structure
 
 ```
-flutter_project_template/
+poke_vault_mobile_app/
 ├── lib/
 │   ├── app/                           # Application configuration
 │   │   ├── bindings/                  # Dependency injection bindings
@@ -130,7 +130,7 @@ Follow these steps to set up this template for your new project:
 ```bash
 # Clone the repository
 git clone <repository-url>
-cd flutter_project_template
+cd poke_vault_mobile_app
 
 # Or fork it on GitHub and clone your fork
 ```
@@ -172,10 +172,10 @@ val applicationId = "com.mycompany.awesomeapp"
 val applicationName = "Awesome App"
 ```
 
-**b. MainActivity.kt** (`android/app/src/main/kotlin/com/example/flutter_project_template/MainActivity.kt`)
+**b. MainActivity.kt** (`android/app/src/main/kotlin/com/example/poke_vault_mobile_app/MainActivity.kt`)
 
 1. Rename the folder structure to match your package name:
-   - From: `android/app/src/main/kotlin/com/example/flutter_project_template/`
+   - From: `android/app/src/main/kotlin/com/example/poke_vault_mobile_app/`
    - To: `android/app/src/main/kotlin/com/yourcompany/yourapp/`
 
 2. Update package declaration (line 1):

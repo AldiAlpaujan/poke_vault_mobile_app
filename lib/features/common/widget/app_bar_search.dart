@@ -1,9 +1,9 @@
-import 'package:flutter_project_template/features/common/widget/app_svg_icon.dart';
+import 'package:poke_vault_mobile_app/features/common/widget/app_svg_icon.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_project_template/config/theme/theme.dart';
-import 'package:flutter_project_template/features/common/widget/app_back_button.dart';
-import 'package:flutter_project_template/shared/constants/gen/assets.gen.dart';
-import 'package:flutter_project_template/shared/utils/function.dart';
+import 'package:poke_vault_mobile_app/config/theme/theme.dart';
+import 'package:poke_vault_mobile_app/features/common/widget/app_back_button.dart';
+import 'package:poke_vault_mobile_app/shared/constants/gen/assets.gen.dart';
+import 'package:poke_vault_mobile_app/shared/utils/function.dart';
 import 'package:get/get.dart';
 
 class AppBarSearch extends StatefulWidget implements PreferredSizeWidget {

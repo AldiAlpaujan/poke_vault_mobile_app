@@ -1,15 +1,15 @@
-import 'package:flutter_project_template/config/bases/base_api_repository.dart';
-import 'package:flutter_project_template/config/bases/base_data_state.dart';
-import 'package:flutter_project_template/features/common/domain/models/response/default_res.dart';
-import 'package:flutter_project_template/features/products/domain/models/request/create_product_req.dart';
-import 'package:flutter_project_template/features/products/domain/models/request/delete_product_req.dart';
-import 'package:flutter_project_template/features/products/domain/models/request/product_category_lookup_req.dart';
-import 'package:flutter_project_template/features/products/domain/models/request/product_req.dart';
-import 'package:flutter_project_template/features/products/domain/models/request/update_product_req.dart';
-import 'package:flutter_project_template/features/products/domain/models/response/product_category_lookup_res.dart';
-import 'package:flutter_project_template/features/products/domain/models/response/product_res.dart';
-import 'package:flutter_project_template/features/products/domain/repositories/products_repository.dart';
-import 'package:flutter_project_template/features/products/data/src/products_api_service.dart';
+import 'package:poke_vault_mobile_app/config/bases/base_api_repository.dart';
+import 'package:poke_vault_mobile_app/config/bases/base_data_state.dart';
+import 'package:poke_vault_mobile_app/features/common/domain/models/response/default_res.dart';
+import 'package:poke_vault_mobile_app/features/products/domain/models/request/create_product_req.dart';
+import 'package:poke_vault_mobile_app/features/products/domain/models/request/delete_product_req.dart';
+import 'package:poke_vault_mobile_app/features/products/domain/models/request/product_category_lookup_req.dart';
+import 'package:poke_vault_mobile_app/features/products/domain/models/request/product_req.dart';
+import 'package:poke_vault_mobile_app/features/products/domain/models/request/update_product_req.dart';
+import 'package:poke_vault_mobile_app/features/products/domain/models/response/product_category_lookup_res.dart';
+import 'package:poke_vault_mobile_app/features/products/domain/models/response/product_res.dart';
+import 'package:poke_vault_mobile_app/features/products/domain/repositories/products_repository.dart';
+import 'package:poke_vault_mobile_app/features/products/data/src/products_api_service.dart';
 
 class ProductsRepositoryImpl extends ApiRepository
     implements ProductsRepository {

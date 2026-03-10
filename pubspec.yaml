@@ -1,5 +1,5 @@
-name: flutter_project_template
-description: "A Template for Flutter Application."
+name: poke_vault_mobile_app
+description: "A Pokemon Mobile App"
 publish_to: 'none' 
 
 version: 1.0.0+1

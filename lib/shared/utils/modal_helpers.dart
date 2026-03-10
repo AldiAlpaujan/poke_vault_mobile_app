@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_project_template/config/theme/theme.dart';
-import 'package:flutter_project_template/features/common/widget/app_btm_modal_camera_source.dart';
-import 'package:flutter_project_template/features/common/widget/app_date_picker.dart';
+import 'package:poke_vault_mobile_app/config/theme/theme.dart';
+import 'package:poke_vault_mobile_app/features/common/widget/app_btm_modal_camera_source.dart';
+import 'package:poke_vault_mobile_app/features/common/widget/app_date_picker.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:syncfusion_flutter_datepicker/datepicker.dart';

@@ -48,9 +48,8 @@ class NotificationService {
   static Future<NotificationDetails> notificationDetails() async {
     return const NotificationDetails(
       android: AndroidNotificationDetails(
-        // TODO : change this name
-        'APPLICATION_NAME',
-        'APPLICATION_NAME',
+        'Poké Vault',
+        'Poké Vault',
         importance: Importance.max,
         priority: Priority.high,
         ticker: 'ticker',

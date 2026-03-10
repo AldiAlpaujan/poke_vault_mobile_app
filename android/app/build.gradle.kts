@@ -2,8 +2,8 @@ import java.util.Properties
 import java.io.FileInputStream
 
 // TODO: change app-name & app-id
-val applicationId = "com.example.flutter_project_template";
-val applicationName = "Project Template"
+val applicationId = "com.example.poke_vault_mobile_app";
+val applicationName = "Poké Vault"
 
 plugins {
     id("com.android.application")

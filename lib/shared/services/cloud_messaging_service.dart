@@ -4,7 +4,7 @@ import 'dart:convert';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/foundation.dart';
-import 'package:flutter_project_template/shared/services/notification_service.dart';
+import 'package:poke_vault_mobile_app/shared/services/notification_service.dart';
 
 class CloudMessagingService {
   // generate token

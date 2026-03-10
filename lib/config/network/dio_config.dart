@@ -1,4 +1,4 @@
-import 'package:flutter_project_template/config/app_config.dart';
+import 'package:poke_vault_mobile_app/config/app_config.dart';
 import 'package:dio/dio.dart';
 import 'package:get/get_instance/get_instance.dart';
 import 'package:get/state_manager.dart';

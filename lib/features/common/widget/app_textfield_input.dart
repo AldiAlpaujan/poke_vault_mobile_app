@@ -1,8 +1,8 @@
 import 'package:currency_text_input_formatter/currency_text_input_formatter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_project_template/config/theme/theme.dart';
-import 'package:flutter_project_template/features/common/widget/app_dropdown.dart';
+import 'package:poke_vault_mobile_app/config/theme/theme.dart';
+import 'package:poke_vault_mobile_app/features/common/widget/app_dropdown.dart';
 import 'package:get/get.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 

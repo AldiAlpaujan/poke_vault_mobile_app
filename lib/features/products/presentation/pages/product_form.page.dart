@@ -1,10 +1,10 @@
-import 'package:flutter_project_template/config/theme/theme.dart';
-import 'package:flutter_project_template/features/common/widget/app_bar_search.dart';
-import 'package:flutter_project_template/features/common/widget/app_fix_btm_button.dart';
-import 'package:flutter_project_template/features/common/widget/app_textfield_input.dart';
-import 'package:flutter_project_template/shared/utils/validator_mixin.dart';
+import 'package:poke_vault_mobile_app/config/theme/theme.dart';
+import 'package:poke_vault_mobile_app/features/common/widget/app_bar_search.dart';
+import 'package:poke_vault_mobile_app/features/common/widget/app_fix_btm_button.dart';
+import 'package:poke_vault_mobile_app/features/common/widget/app_textfield_input.dart';
+import 'package:poke_vault_mobile_app/shared/utils/validator_mixin.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_project_template/features/products/presentation/controllers/product_form.controller.dart';
+import 'package:poke_vault_mobile_app/features/products/presentation/controllers/product_form.controller.dart';
 import 'package:get/get.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 

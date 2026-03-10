@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_project_template/config/bases/base_data_state.dart';
-import 'package:flutter_project_template/config/bases/base_response.dart';
-import 'package:flutter_project_template/features/common/domain/models/request/pagination_req.dart';
-import 'package:flutter_project_template/shared/utils/handler_api_mixin.dart';
+import 'package:poke_vault_mobile_app/config/bases/base_data_state.dart';
+import 'package:poke_vault_mobile_app/config/bases/base_response.dart';
+import 'package:poke_vault_mobile_app/features/common/domain/models/request/pagination_req.dart';
+import 'package:poke_vault_mobile_app/shared/utils/handler_api_mixin.dart';
 import 'package:get/get.dart';
 
 abstract class ApiPagination<T> extends GetxController with HandlerApiMixin {

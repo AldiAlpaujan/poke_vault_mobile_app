@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_project_template/config/theme/theme.dart';
+import 'package:poke_vault_mobile_app/config/theme/theme.dart';
 
 class AppLoading extends StatelessWidget {
   final double size;

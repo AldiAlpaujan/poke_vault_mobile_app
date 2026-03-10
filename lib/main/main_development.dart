@@ -1,13 +1,13 @@
-import 'package:flutter_project_template/bootstrap.dart';
-import 'package:flutter_project_template/config/app_config.dart';
-import 'package:flutter_project_template/shared/enums/app_flavor.dart';
+import 'package:poke_vault_mobile_app/bootstrap.dart';
+import 'package:poke_vault_mobile_app/config/app_config.dart';
+import 'package:poke_vault_mobile_app/shared/enums/app_flavor.dart';
 import 'package:get/instance_manager.dart';
 
 void main() {
   Get.put(
     AppConfig(
       flavor: AppFlavor.development,
-      appName: "Project Template Dev",
+      appName: "Poké Vault Dev",
       apiUrl: "https://aldimalpaujanbackend-production.up.railway.app/api",
     ),
   );

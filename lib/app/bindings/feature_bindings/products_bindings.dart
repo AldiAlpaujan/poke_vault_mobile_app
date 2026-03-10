@@ -1,13 +1,13 @@
 import 'package:get/get.dart';
-import 'package:flutter_project_template/shared/utils/main_helpers.dart';
-import 'package:flutter_project_template/features/products/data/repositories/products_repository_impl.dart';
-import 'package:flutter_project_template/features/products/data/src/products_api_service.dart';
-import 'package:flutter_project_template/features/products/domain/repositories/products_repository.dart';
-import 'package:flutter_project_template/features/products/domain/usecases/get_products_uc.dart';
-import 'package:flutter_project_template/features/products/domain/usecases/create_products_uc.dart';
-import 'package:flutter_project_template/features/products/domain/usecases/update_products_uc.dart';
-import 'package:flutter_project_template/features/products/domain/usecases/delete_products_uc.dart';
-import 'package:flutter_project_template/features/products/domain/usecases/product_category_lookup_uc.dart';
+import 'package:poke_vault_mobile_app/shared/utils/main_helpers.dart';
+import 'package:poke_vault_mobile_app/features/products/data/repositories/products_repository_impl.dart';
+import 'package:poke_vault_mobile_app/features/products/data/src/products_api_service.dart';
+import 'package:poke_vault_mobile_app/features/products/domain/repositories/products_repository.dart';
+import 'package:poke_vault_mobile_app/features/products/domain/usecases/get_products_uc.dart';
+import 'package:poke_vault_mobile_app/features/products/domain/usecases/create_products_uc.dart';
+import 'package:poke_vault_mobile_app/features/products/domain/usecases/update_products_uc.dart';
+import 'package:poke_vault_mobile_app/features/products/domain/usecases/delete_products_uc.dart';
+import 'package:poke_vault_mobile_app/features/products/domain/usecases/product_category_lookup_uc.dart';
 
 class ProductsBindings extends Bindings {
   @override

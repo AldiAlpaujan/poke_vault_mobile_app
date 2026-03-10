@@ -1,4 +1,4 @@
-import 'package:flutter_project_template/features/common/domain/models/request/pagination_req.dart';
+import 'package:poke_vault_mobile_app/features/common/domain/models/request/pagination_req.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'product_req.g.dart';

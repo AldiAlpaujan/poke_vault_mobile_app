@@ -1,8 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
-import 'package:flutter_project_template/config/bases/base_data_state.dart';
-import 'package:flutter_project_template/shared/extensions/object_extension.dart';
-import 'package:flutter_project_template/shared/utils/main_helpers.dart';
+import 'package:poke_vault_mobile_app/config/bases/base_data_state.dart';
+import 'package:poke_vault_mobile_app/shared/extensions/object_extension.dart';
+import 'package:poke_vault_mobile_app/shared/utils/main_helpers.dart';
 
 mixin HandlerApiMixin {
   @protected
