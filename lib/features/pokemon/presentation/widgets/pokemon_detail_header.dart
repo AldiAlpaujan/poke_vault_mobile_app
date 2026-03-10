@@ -93,19 +93,23 @@ class PokemonDetailHeader extends GetView<PokemonDetailController> {
                       ),
                     ).onTap(Get.back),
                     Spacer(),
-                    Container(
-                      height: 30,
-                      width: 30,
-                      padding: EdgeInsets.all(4),
-                      decoration: BoxDecoration(
-                        color: Colors.white.withValues(alpha: .2),
-                        borderRadius: BorderRadius.circular(6),
-                      ),
-                      child: Icon(
-                        Icons.favorite_outline,
-                        size: 20,
-                        color: Colors.white,
-                      ),
+                    Obx(
+                      () => Container(
+                        height: 30,
+                        width: 30,
+                        padding: EdgeInsets.all(4),
+                        decoration: BoxDecoration(
+                          color: Colors.white.withValues(alpha: .2),
+                          borderRadius: BorderRadius.circular(6),
+                        ),
+                        child: Icon(
+                          controller.isFavorite
+                              ? Icons.favorite
+                              : Icons.favorite_outline,
+                          size: 20,
+                          color: Colors.white,
+                        ),
+                      ).onTap(controller.toggleFavorite),
                     ),
                   ],
                 ).b(10),

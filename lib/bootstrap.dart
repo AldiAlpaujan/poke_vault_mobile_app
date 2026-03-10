@@ -12,11 +12,13 @@ import 'package:poke_vault_mobile_app/shared/services/notification_service.dart'
 import 'package:get/get_instance/src/extension_instance.dart';
 import 'package:get/route_manager.dart';
 import 'package:in_app_update/in_app_update.dart';
+import 'package:poke_vault_mobile_app/shared/services/object_box_service.dart';
 
-void bootstrap() {
+Future<void> bootstrap() async {
   applyIsrgPatch();
   WidgetsFlutterBinding.ensureInitialized();
   AppBindings().dependencies();
+  await ObjectBoxService.init();
   runApp(const MyApp());
 }
 

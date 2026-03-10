@@ -80,6 +80,8 @@ dependencies:
 
   # local storage & database
   shared_preferences: ^2.3.3
+  objectbox: ^5.2.0
+  objectbox_sync_flutter_libs: any
 
   # image cached
   cached_network_image: ^3.4.1
@@ -120,6 +122,7 @@ dev_dependencies:
   flutter_gen_runner: ^5.12.0
   retrofit_generator: ^10.2.0  
   json_serializable: ^6.11.2
+  objectbox_generator: any
 
 flutter_gen:
   output: lib/shared/constants/gen/
